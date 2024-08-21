@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--컨피규레이션의 추가 설정을 할 수 있는데 거기에는 나오는 순서가 있으며 셋팅즈는 타입얼라이즈보다 먼저 나와야 함. -->
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <typeAlias type="com.nc13.springBoard.model.UserDTO" alias="userDTO"/>
+        <typeAlias type="com.nc13.springBoard.model.BoardDTO" alias="boardDTO"/>
+        <typeAlias type="com.nc13.springBoard.model.ReplyDTO" alias="replyDTO"/>
+        <!--타입에 대한 설정 userDTO -->
+    </typeAliases>
+</configuration>
+<!-- UserDTO userDTO = new userDTO();를 대신 해주는 아이-->
