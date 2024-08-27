@@ -2,40 +2,49 @@ package live.greenmarket.user.service.impl;
 
 import live.greenmarket.user.model.domain.UserModel;
 import live.greenmarket.user.model.entity.UserEntity;
+import live.greenmarket.user.model.repository.UserRepository;
 import live.greenmarket.user.service.UserService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
-
+@Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+    private final UserRepository userRepository;
 
     @Override
     public List<UserEntity> findAll() {
-        return List.of();
+        return userRepository.findAll();
+    }
+
+
+    @Override
+    public Optional<UserEntity> findById(Long id) {
+        return userRepository.findById(id);
     }
 
     @Override
-    public UserEntity save(UserModel userModel) {
-        return null;
-    }
-
-    @Override
-    public UserEntity findAllById(UserModel id) {
-        return null;
-    }
-
-    @Override
-    public boolean existsById(UserModel id) {
-        return false;
+    public boolean existsById(Long id) {
+        return userRepository.existsById(id);
     }
 
     @Override
     public long count() {
-        return 0;
+        return userRepository.count();
     }
 
     @Override
-    public void deleteById(UserModel id) {
-
+    public void deleteById(Long id) {
+        userRepository.deleteById(id);
     }
+
+    @Override
+    public Map<?, ?> login(Long model) {
+        return Map.of();
+    }
+
 }

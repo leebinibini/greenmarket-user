@@ -2,43 +2,55 @@ package live.greenmarket.user.controller;
 
 import live.greenmarket.user.model.domain.UserModel;
 import live.greenmarket.user.model.entity.UserEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import live.greenmarket.user.model.repository.UserRepository;
+import live.greenmarket.user.service.UserService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
-
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/users")
 public class UserController {
 
+    private final UserService userService;
+    private final UserRepository userRepository;
 
+    @PostMapping("/join")
+    public Object join(@RequestBody UserEntity entity){
+       return userRepository.save(UserEntity.builder()
+                .username(entity.getUsername())
+                .password(entity.getPassword())
+                .build());
+    }
+
+    @PostMapping("/login")
+    public Object login(@RequestBody UserModel model){return userService.login(model);
+    }
+    @PostMapping("/findAll")
     public List<UserEntity> findAll() {
-        return List.of();
+        return userService.findAll();
     }
 
-    
-    public UserEntity save(UserModel userModel) {
-        return null;
+    @PostMapping("/findById")
+    public Optional<UserEntity> findById(Long id) {
+        return userService.findById(id);
     }
 
-    
-    public UserEntity findAllById(UserModel id) {
-        return null;
-    }
-
-    
-    public boolean existsById(UserModel id) {
-        return false;
+    @GetMapping("/existsById/{id}")
+    public boolean existsById(@PathVariable Long id) {
+        return userService.existsById(id);
     }
 
     
     public long count() {
-        return 0;
+        return userService.count();
     }
 
     
-    public void deleteById(UserModel id) {
-
+    public void deleteById(Long id) {
+            userService.deleteById(id);
     }
 }

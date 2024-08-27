@@ -1,11 +1,14 @@
 package live.greenmarket.user.model.domain;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
-//@Builder
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@ToString(exclude = "id")
 @Component
 public class HotelModel {
     private Long id;

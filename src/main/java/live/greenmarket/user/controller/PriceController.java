@@ -21,32 +21,27 @@ import java.util.Optional;
 public class PriceController {
 
     private final PriceService priceService;
-    @GetMapping("path")
+    @GetMapping("findAll")
     public List<PriceEntity> findAll() {
         return priceService.findAll();
     }
 
-    @PostMapping("path")
-    public PriceEntity save(PriceModel priceModel) {
-        return priceService.save(priceModel);
-    }
-
-    @GetMapping("path")
+    @GetMapping("findAllById")
     public Optional<PriceEntity> findAllById(Long id) {
         return priceService.findById(id);
     }
 
-    @GetMapping("path")
+    @GetMapping("existsById")
     public boolean existsById(Long id) {
         return priceService.existsById(id);
     }
 
-    @GetMapping("path")
+    @GetMapping("count")
     public long count() {
         return priceService.count();
     }
 
-    @DeleteMapping("path")
+    @DeleteMapping("deleteById")
     public void deleteById(Long id) { priceService.deleteById(id);
     }
 }

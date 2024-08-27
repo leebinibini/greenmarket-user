@@ -1,38 +1,27 @@
 package live.greenmarket.user.model.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.util.Date;
 
 @Table(name="reviews")
-@Data
+@AllArgsConstructor
+@Builder
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ReviewEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
-
-    @Column(name = "reservationId")
     private int reservationId;
-
-    @Column(name = "comment")
     private String comment;
-
-    @Column(name = "rating")
     private float rating;
-
-    @Column(name = "createdAt")
     private Date createdAt;
-
-    @Column(name = "updatedAt")
     private Date updatedAt;
-
-    @Column(name = "memberId")
     private int memberId;
-
-    @Column(name = "memberName")
     private String memberName;
 
     //

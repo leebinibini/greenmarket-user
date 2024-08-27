@@ -9,7 +9,6 @@ import java.util.Optional;
 
 public interface HotelService {
     List<HotelEntity> findAll();
-    HotelEntity  save(HotelModel hotelModel);
     Optional<HotelEntity> findById(Long id);
     boolean existsById(Long id);
     long count();

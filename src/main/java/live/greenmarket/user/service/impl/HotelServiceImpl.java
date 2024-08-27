@@ -5,6 +5,7 @@ import live.greenmarket.user.model.entity.HotelEntity;
 import live.greenmarket.user.model.entity.UserEntity;
 import live.greenmarket.user.model.repository.HotelRepository;
 import live.greenmarket.user.service.HotelService;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,12 +20,6 @@ public class HotelServiceImpl implements HotelService {
     @Override
     public List<HotelEntity> findAll() {
         return hotelRepository.findAll();
-    }
-
-    @Override
-    public HotelEntity save(HotelModel hotelModel) {
-        HotelEntity entity = new HotelEntity();
-        return hotelRepository.save(entity);
     }
 
     @Override

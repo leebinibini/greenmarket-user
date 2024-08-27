@@ -1,17 +1,20 @@
 package live.greenmarket.user.model.domain;
 
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@ToString(exclude = "id")
 @Component
-//@Builder
 public class ReviewModel {
-    private int id;
+    private Long id;
     private int reservationId;
     private String comment;
     private float rating;

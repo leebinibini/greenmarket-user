@@ -4,17 +4,15 @@ import live.greenmarket.user.model.domain.UserModel;
 import live.greenmarket.user.model.entity.UserEntity;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @Service
 public interface UserService {
-
     List<UserEntity> findAll();
-    UserEntity  save(UserModel userModel);
-    UserEntity findAllById(UserModel id);
-    boolean existsById(UserModel id);
+    Optional<UserEntity> findById(Long id);
+    boolean existsById(Long id);
     long count();
-    void deleteById(UserModel id);
-
-
-
+    void deleteById(Long id);
+    Map<?,?> login(Long model);
 }

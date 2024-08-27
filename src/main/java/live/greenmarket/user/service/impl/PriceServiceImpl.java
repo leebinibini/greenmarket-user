@@ -21,11 +21,6 @@ public class PriceServiceImpl implements PriceService {
         return priceRepository.findAll();
     }
 
-    @Override
-    public PriceEntity save(PriceModel priceModel) {
-        PriceEntity entity = new PriceEntity();
-        return priceRepository.save(entity);
-    }
 
     @Override
     public Optional<PriceEntity> findById(Long id) {
