@@ -19,28 +19,28 @@ public class HotelController {
 
     private final HotelService hotelService;
 
-    @GetMapping("findAll")
+//    @GetMapping("findAll")
     public List<HotelEntity> findAll() {
         return hotelService.findAll();
     }
 
 
-    @GetMapping("findById")
+//    @GetMapping("findById")
     public Optional<HotelEntity> findById(Long id) {
         return hotelService.findById(id);
     }
 
-    @GetMapping("existsById")
+//    @GetMapping("existsById")
     public boolean existsById(Long id) {
         return hotelService.existsById(id);
     }
 
-    @GetMapping("count")
+//    @GetMapping("count")
     public long count() {
         return hotelService.count();
     }
 
-    @DeleteMapping("deleteById")
+//    @DeleteMapping("deleteById")
     public void deleteById(Long id) { hotelService.deleteById(id);
     }
 }

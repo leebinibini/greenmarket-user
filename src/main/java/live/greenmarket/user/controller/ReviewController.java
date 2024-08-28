@@ -19,26 +19,26 @@ import java.util.Optional;
 public class ReviewController {
     private final ReviewService reviewService;
 
-    @PostMapping("/findAll")
+//    @PostMapping("/findAll")
     public List<ReviewEntity> findAll() {
         return reviewService.findAll();
     }
-    @PostMapping("/findById")
+//    @PostMapping("/findById")
     public Optional<ReviewEntity> findById(Long id) {
         return reviewService.findById(id);
     }
 
-    @PostMapping("/existsById")
+//    @PostMapping("/existsById")
     public boolean existsById(Long id) {
         return reviewService.existsById(id);
     }
 
-    @PostMapping("/count")
+//    @PostMapping("/count")
     public long count() {
         return reviewService.count();
     }
 
-    @PostMapping("/deleteById")
+//    @PostMapping("/deleteById")
     public void deleteById(Long id) {
             reviewService.deleteById(id);
     }

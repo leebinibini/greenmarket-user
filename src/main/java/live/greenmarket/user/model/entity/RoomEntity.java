@@ -3,17 +3,18 @@ package live.greenmarket.user.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Getter @Setter
-@Table(name="users")
+@Table(name="rooms")
 @AllArgsConstructor
 @Builder
 @Entity
+@Getter
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class UserEntity {
+public class RoomEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String username;
-    private String password;
-
+    private int id;
+    private int limitPeople;
+    private String type;
+    private int hotelId;
 }

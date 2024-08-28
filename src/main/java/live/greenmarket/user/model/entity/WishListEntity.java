@@ -4,16 +4,14 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Getter @Setter
-@Table(name="users")
+@Table(name="wishLists")
 @AllArgsConstructor
 @Builder
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class UserEntity {
+public class WishListEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String username;
-    private String password;
-
+    private int hotelId;
+    private int memberId;
 }
